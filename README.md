@@ -24,3 +24,6 @@ The directory includes two folders.
   #### Controllers
   - [ ] Guidance algorithm
   - [ ] Control algorithm
+  
+  #### Software
+  - [ ] Write automatic tests
