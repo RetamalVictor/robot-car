@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# VScode files
+.vs/
+.vscode/
+*.vcxproj
+*.sln
