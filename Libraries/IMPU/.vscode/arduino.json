@@ -1,6 +1,0 @@
-{
-    "board": "arduino:avr:uno",
-    "port": "COM4",
-    "programmer": "arduino:avrisp",
-    "sketch": "examples\\RunTest\\RunTest.ino"
-}
