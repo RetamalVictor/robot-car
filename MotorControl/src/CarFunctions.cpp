@@ -69,6 +69,10 @@ void carFunctions::movementFunction(MotionControl direction, uint8_t speed, uint
     if ((direction == Forward) || (direction == Backward)){
     carFunctions::computePIDControl(speed, Kp, UpperLimit, desired_yaw, R, L);
     }
+    Serial.print("Right speed: ");
+    Serial.println(R);
+    Serial.print("Right speed: ");
+    Serial.println(L);
     // Serial.print("Desired Yaw:");
     // Serial.println(desired_yaw);
     // Serial.print("Motor R speed:");

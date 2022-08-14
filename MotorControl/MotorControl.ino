@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include <avr/wdt.h>
-#include "src/CarFunctions.h"
+#include "CarFunctions.h"
 
 carFunctions functionSet;
 float desiredYaw;
@@ -14,7 +14,7 @@ void setup()
 
     Serial.begin(9600);
     while(!Serial);
-    
+
     functionSet.initCar();
     delay(6000);
     Serial.println("Initializing controller");
@@ -25,6 +25,10 @@ void setup()
 // the loop function runs over and over again until power down or reset
 void loop() 
 {
-    functionSet.movementFunction(functionSet.Forward,speed, Kp, UpperLimit, desiredYaw);
-    delay(2000);
+    functionSet.initControl(desiredYaw);   
+    for (int i = 0; i < 100; i++)
+    {
+        functionSet.movementFunction(functionSet.Forward,speed, Kp, UpperLimit, desiredYaw);
+        // delay(2000);
+    }
 }
