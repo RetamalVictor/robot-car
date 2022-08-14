@@ -1,41 +1,30 @@
-#include "IMPU.h"
-#include "src/MyConfig.h"
+#include <Arduino.h>
 #include <avr/wdt.h>
-// #include "src/DeviceDriverSet.h"
-// #include "src/AppFunctionSet.cpp"
+#include "src/CarFunctions.h"
 
-MyConfig config;
-IMPU& mpu = config.getMPU();
-// DeviceDriverSet_Motor AppMotor;
-// Application_xxx  FunctionSetMotor;
-
+carFunctions functionSet;
+float desiredYaw;
+uint8_t Kp, UpperLimit, speed;
 // the setup function runs once when you press reset or power the board
-void setup() {
+void setup() 
+{
+    speed = 100;
+    Kp = 10;
+    UpperLimit = 255;
+
     Serial.begin(9600);
     while(!Serial);
-    // if (mpu.isCalibrated() == false){
-    //     Serial.println("Calibration starting, set the robot in flat surface");
-    // mpu.Calibrate();
-    // delay(2000);
-    // Serial.println(mpu.isCalibrated());
-    mpu.Init();
-    //     mpu.Init();
-    // } 
-    // else{
-    //     mpu.Init();
-    // }
+    
+    functionSet.initCar();
+    delay(6000);
+    Serial.println("Initializing controller");
+    functionSet.initControl(desiredYaw);
+
 }
 
 // the loop function runs over and over again until power down or reset
-void loop() {
-
-    float y, p, r;
-
-	mpu.getYawPitchRoll(y, p, r);
-	Serial.print(y);
-	Serial.print("\t");
-	Serial.print(p);
-	Serial.print("\t");
-	Serial.println(r);  
+void loop() 
+{
+    functionSet.movementFunction(functionSet.Forward,speed, Kp, UpperLimit, desiredYaw);
     delay(2000);
 }

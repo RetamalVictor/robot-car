@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 class carFunctions
 {
@@ -15,8 +16,8 @@ public:
         RightBackward, //(8)
         stop_it        //(9)
     };
-    void computePIDControl(MotionControl direction, uint8_t is_speed,
-                                uint8_t Kp, uint8_t UpperLimit);
-    void movementFunction(MotionControl direction, uint8_t is_speed);
-                       
+    void initCar();
+    void initControl(float& desired_yaw);
+    void computePIDControl(uint8_t speed, uint8_t Kp, uint8_t UpperLimit, float desired_yaw, float& R, float& L);
+    void movementFunction(MotionControl direction, uint8_t speed, uint8_t Kp, uint8_t UpperLimit, float desired_yaw);
 };
