@@ -1,4 +1,4 @@
-# Robot Car
+# Robot Car with Vision Guidance
 
 This is a work in progress repository for the Robot Car with Vision guidance. 
 The directory includes two folders for now.
