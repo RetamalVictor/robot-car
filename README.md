@@ -1,8 +1,7 @@
 # Robot Car
 
-This project is based in the Elegoo Conqueror tank.
-
-The directory includes two folders.
+This is a work in progress repository for the Robot Car with Vision guidance. 
+The directory includes two folders for now.
 
 - MotorControl: Contains the Arduino Sketch to run the Project "MotorControl.ino" (Still under development)
 - Libraries: Contains the libraries needed for the project. Currently, they are two:
@@ -12,6 +11,13 @@ The directory includes two folders.
   The last commit included implementing Proportional control to follow a straight trajectory.  
   
 ## TODO
+
+### Connectivity
+- [ ] Wifi controller
+
+### Camera
+- [ ] Neural depth estimation
+- [ ] Relative localization via Vision
 
 ### Motors
 
@@ -24,10 +30,10 @@ The directory includes two folders.
 
 ### Sensors
 
-- [ ] Write sensors drivers
+- [x] Write sensors drivers
 - [x] Extrac MPU6050 sensor information
-- [ ] Extrac Ultrasound information
-- [ ] Camara information
+- [x] Extrac Ultrasound information
+- [x] Camera information
 - [x] Navigation Filters
 
 ### Controllers
