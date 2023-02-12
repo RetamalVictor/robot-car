@@ -7,3 +7,5 @@ This is a work in progress repository for the Robot Car with Vision guidance.
   - MPU6050 library by Jeff Rowberg.
 
   The last commit included implementing PID to follow a straight trajectory based on relative yaw.  
+
+Next milestones: ESP32 cam --> relative localization.
