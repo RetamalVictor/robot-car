@@ -9,3 +9,5 @@ This is a work in progress repository for the Robot Car with Vision guidance.
   The last commit included implementing PID to follow a straight trajectory based on relative yaw.  
 
 Next milestones: ESP32 cam --> relative localization.
+ - Distributed camera pipeline is almost ready. USing ROS2 components (Nodelets)
+ - Next step is to add the MiDas Depth estimation pretrained model
